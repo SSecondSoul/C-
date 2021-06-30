@@ -1,0 +1,44 @@
+include<iostream>
+include<fstream>
+
+void main()
+{
+fstream file=("student.text",ios::out|ios::binary|ios::trunc);//ios::binary（二进制）ios::trunc（
+if(file.fail())
+{
+cout<<"文件打开失败"；
+exit;
+}
+
+}
+
+istream& ignore(streamsize n=1, char c=EOF)//从输入流读取n个字符，遇到终止符c结束读取。可用于文件读取的时候跳过某些字符，例：file.ignore(1024,',')//跳过1024个','
+
+
+app(append), to seek to the end of a stream before each insertion.
+写方式打开，在文件尾追加写入数据
+若文件不存在，创建该文件
+
+ate(at end), to seek to the end of a stream when its controlling object is first created.
+定位于文件尾
+
+binary, to read a file as a binary stream, rather than as a text stream.
+二进制方式打开文件，缺省：文本方式
+
+in(input), to permit extraction from a stream.
+读方式打开，ifstream 缺省方式
+若文件不存在：open 失败
+
+out(output), to permit insertion to a stream.
+写方式打开创建文件， ofstream 缺省方式
+
+trunc(truncate), to delete contents of an existing file when its controlling object is created.
+写方式打开与app冲突，且删除其中数据
+流对象==0(NULL)：打开失败
+
+ifstream   in( "test.dat" ) ;
+if( !in ){cout<< "打开文件失败\n" ; exit(0); } 
+else     cout<< "打开文件成功\n " ;
+流对象成员函数 fail()==true：打开失败
+流对象成员函数 is_open==false：打开失败
+
