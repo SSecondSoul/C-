@@ -13,7 +13,7 @@ exit;
 }
 
 istream& ignore(streamsize n=1, char c=EOF)//从输入流读取n个字符，遇到终止符c结束读取。可用于文件读取的时候跳过某些字符，例：file.ignore(1024,',')//跳过1024个','
-
+::std::cin.ignore();  //可以指定丢掉的字符数及分隔符如： ignore(2, '/n')
 
 app(append), to seek to the end of a stream before each insertion.
 写方式打开，在文件尾追加写入数据
